@@ -1,0 +1,87 @@
+Creating a Class:
+
+A new class named Account is created to represent a bank account.
+The constructor method (constructor) is used to initialize the properties of the class, such as owner, currency, pin, movements, and locale.
+Initializing Properties:
+
+The constructor initializes the instance properties (this.owner, this.currency, this.pin, this.movements) based on the values passed during the object creation.
+Additional Properties:
+
+Additional properties like movements and locale are introduced inside the constructor without being passed as parameters. These properties are initialized with default values (movements as an empty array and locale using navigator.language).
+Constructor Greeting:
+
+Additional code inside the constructor prints a greeting message, acknowledging the account creation. For example, "Thanks for opening an account, [owner]."
+Methods for Deposits and Withdrawals:
+
+Methods deposit and withdraw are defined for handling deposits and withdrawals, respectively.
+The methods use this.movements.push to update the movements array based on the deposit or withdrawal amount.
+Method Interaction:
+
+The withdraw method is interestingly calling the deposit method internally to handle the logic of subtracting the withdrawal amount.
+Public Interface:
+
+The concept of a public interface is introduced, emphasizing the importance of using methods to interact with object properties rather than manipulating them directly.
+Methods like deposit and withdraw act as the public interface, providing a controlled way to modify the account's movements.
+Data Encapsulation and Privacy Concerns:
+
+Concerns are raised about the accessibility of properties and methods from outside the class, potentially leading to bugs.
+The need for data encapsulation and privacy is emphasized to prevent unwanted external access to properties and methods.
+Encapsulation Example:
+
+An example is given where an internal method (approveLoan) is used within another method (requestLoan). The importance of restricting direct access to internal methods is highlighted.
+
+
+Code:
+
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this._pin = pin; // Use an underscore to indicate a private property
+    this._movements = []; // Using underscore for privacy
+    this._locale = navigator.language;
+
+    console.log(`Thanks for opening an account, ${this.owner}!`);
+  }
+
+  // Public method for deposit
+  deposit(value) {
+    this._movements.push(value);
+  }
+
+  // Public method for withdrawal
+  withdraw(value) {
+    this.deposit(-value); // Reusing deposit method to handle withdrawal
+  }
+
+  // Public method for requesting a loan
+  requestLoan(value) {
+    // Internal method for loan approval
+    if (this._approveLoan(value)) {
+      this.deposit(value);
+      console.log(`Loan approved! ${value} deposited into your account.`);
+    } else {
+      console.log(`Loan request denied.`);
+    }
+  }
+
+  // Private method for loan approval
+  _approveLoan(value) {
+    // For simplicity, always approve the loan
+    return true;
+  }
+}
+
+// Example usage:
+const acc1 = new Account('Jonas', 'Euro', 1234);
+
+// Try to access private properties (this should not be allowed)
+console.log(acc1._pin); // Not recommended, but still accessible
+
+// Use public methods to interact with the account
+acc1.deposit(250);
+acc1.withdraw(140);
+acc1.requestLoan(1000);
+
+// Try to access a private method (this should not be allowed)
+console.log(acc1._approveLoan(500)); // Not recommended, and not accessible

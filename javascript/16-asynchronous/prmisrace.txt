@@ -1,0 +1,25 @@
+`Promise.race` is a static method available on the `Promise` object in JavaScript. It takes an iterable of promises as its argument and returns a new promise that settles (either resolves or rejects) as soon as the first promise in the iterable settles, whether it resolves or rejects. The result of the first settled promise becomes the result of the returned promise.
+
+Here's the basic syntax:
+
+```javascript
+Promise.race(iterable);
+```
+
+For example, if you have an array of promises and you want to know which one settles first, you can use `Promise.race`:
+
+```javascript
+const promise1 = new Promise((resolve) => setTimeout(() => resolve('Promise 1 resolved'), 1000));
+const promise2 = new Promise((resolve) => setTimeout(() => resolve('Promise 2 resolved'), 500));
+const promise3 = new Promise((resolve, reject) => setTimeout(() => reject('Promise 3 rejected'), 200));
+
+const racePromise = Promise.race([promise1, promise2, promise3]);
+
+racePromise.then((result) => {
+  console.log('First settled promise:', result);
+}).catch((error) => {
+  console.error('First settled promise rejected with error:', error);
+});
+```
+
+In this example, `racePromise` will resolve or reject as soon as the first promise among `promise1`, `promise2`, and `promise3` settles. The `console.log` or `console.error` statements will print the result accordingly.

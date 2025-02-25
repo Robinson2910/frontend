@@ -1,0 +1,43 @@
+Here are the notes summarizing the key points from the transcript:
+
+**Topic: Introduction to Promises in JavaScript**
+
+**1. Callback Hell and the Need for Promises**
+- Callback hell was discussed in the previous video.
+- In this lecture, we explore promises, a modern JavaScript feature, to escape callback hell.
+
+**2. Replacing XML HTTP Request with Fetch API**
+- Demonstrated replacing the old XML HTTP request method with the Fetch API for making AJAX calls.
+- Fetch API simplifies AJAX calls by providing a more straightforward syntax.
+
+**3. Fetching Data with Promises**
+- Introduced the `fetch` function to make AJAX calls.
+- `fetch` returns a promise immediately upon request initiation.
+- A promise is like a container for the future result of an asynchronous operation.
+
+**4. Analogy: Promises as Lottery Tickets**
+- Compared promises to lottery tickets; buying a promise for a future value.
+- Asynchronous tasks determine the outcome of the promise (ticket).
+- Promises are useful for handling asynchronous results.
+
+**5. Advantages of Promises**
+- Promises eliminate the need for events and callback functions, leading to more predictable code.
+- Promises can be chained for a sequence of asynchronous operations, helping to avoid callback hell.
+- Promises are available in JavaScript since ES6 (2015).
+
+**6. Promise States**
+- Promises go through different states: pending (before value is available), fulfilled (successfully resulted in a value), and rejected (an error occurred).
+- Analogy: The lottery ticket is settled when the result is determined, either fulfilled (win) or rejected (loss).
+
+**7. Promise Immutability**
+- A promise is only settled once and cannot change its state.
+
+**8. Creating and Consuming Promises**
+- Promises can be consumed when you have a promise (e.g., returned by `fetch`).
+- Promises must be built before they can be consumed.
+- In most cases, you'll be consuming promises, which is the easier part.
+
+**9. Upcoming Topics**
+- Future videos will cover using promises in practical examples.
+
+These notes provide an overview of the key concepts discussed in the video transcript and should serve as a self-explanatory summary of the topic.

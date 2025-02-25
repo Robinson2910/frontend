@@ -1,0 +1,277 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* @font-face {
+  font-family: "AvenirLT55Roman";
+  src: url("./fonts/Avenir LT 55 Roman Regular/Avenir LT 55 Roman Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+} */
+body {
+  font-family: "AvenirLT55Roman", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+
+  /* overflow-x: hidden; */
+  overflow-y: hidden;
+}
+
+.margin-bottom-vsmall {
+  margin-bottom: 16px !important;
+}
+.text-center {
+  text-align: center;
+}
+.margin-bottom-small {
+  margin-bottom: 32px !important;
+}
+.margin-bottom-large {
+  margin-bottom: 48px !important;
+}
+.login-page,
+.signup-page {
+  background-image: url("../img/baground_4k.jpg");
+  /* Other background properties */
+  background-size: cover;
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.login-page-grid,
+.signup-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.image-column {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 64px;
+}
+.form-column {
+  width: 80%;
+  /* align-self: flex-end; */
+  justify-self: end;
+  align-self: center;
+}
+.welcome-heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+.portal-heading {
+  font-size: 24px;
+  font-weight: 400;
+}
+.label {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.input ::placeholder {
+  font-size: 13px;
+  color: #535353;
+}
+.logo-img {
+  max-width: 128px;
+}
+
+.icon-img {
+  max-width: 480px;
+  max-height: 400px;
+}
+
+/* form styles */
+.form-box {
+  width: 500px;
+  background: #fff;
+
+  padding: 50px 0;
+  color: #333;
+  /* box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1); */
+}
+
+.login-page-grid .form-column .form-box {
+  margin: 12% auto 0 auto;
+}
+
+.input-box {
+  /* margin: 31px auto;
+  width: 80%; */
+  border-bottom: 1px solid #181ab1;
+  /* padding-top: 10px; */
+  padding-bottom: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.input-box input {
+  width: 90%;
+  border: none;
+  outline: none;
+  background: inherit;
+  color: #000000;
+}
+.input-box .icon svg {
+  font-size: 20px;
+}
+
+.login-btn,
+.signup-btn {
+  margin-bottom: 16px;
+  width: 100%;
+  display: block;
+  outline: none;
+  padding: 10px 0;
+  border: 1px solid #fff;
+  cursor: pointer;
+  background: #181ab1;
+  border-radius: 9px;
+  color: #fff;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  background-color: #0a0854;
+}
+
+.activate {
+  -webkit-text-security: none;
+}
+
+.notactivate {
+  -webkit-text-security: disc;
+  color: #7a7a7a;
+}
+.forgot-password-box {
+  display: flex;
+  justify-content: end;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  margin-bottom: 16px;
+}
+
+.account-signup-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* .forget-password-link {
+  display: block;
+} */
+.forget-password-link,
+.no-account-link,
+.already-account-link {
+  font-size: 13px;
+  text-decoration: none;
+  color: #535353;
+  transition: color 0.3s ease;
+}
+
+.forget-password-link:hover,
+.no-account-link:hover,
+.already-account-link {
+  color: #000;
+}
+
+.signup-link,
+.login-link {
+  font-weight: 700;
+  font-size: 16px;
+  color: #181ab1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover,
+.login-link:hover {
+  color: #0a0854;
+  text-decoration: underline;
+}
+
+/* signup styles */
+
+.name-box {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.input-box .file {
+  display: none;
+}
+
+.arrow-icon svg {
+  stroke: #181ab1;
+  cursor: pointer;
+  margin-left: 90%;
+  display: inline-block;
+}
+
+.arrow-icon {
+  display: inline-block;
+}
+.f-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: calc(90% + 20px);
+}
+.para {
+  color: #181ab1;
+  font-size: 17px;
+  margin-bottom: 24px;
+}
+.signup-heading {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block;
+  margin-top: -20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* .error-message {
+  font-size: 12px!;
+} */
+
+.error-message-box {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  color: red;
+  /* justify-content: center; */
+}
+.error-message-box svg {
+  font-size: 14px;
+}
+
+.input-box input[type="number"]::-webkit-inner-spin-button,
+.input-box input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-box select {
+  width: 100%;
+  outline: none; /* This removes the outline border */
+  border: none;
+}

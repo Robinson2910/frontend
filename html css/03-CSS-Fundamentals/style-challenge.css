@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+.product {
+  border: 4px solid black;
+  width: 920px;
+  height: auto;
+  margin: 50px auto;
+}
+.product-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px;
+  background-color: #f7f7f7;
+  font-size: 22px;
+}
+
+.price {
+  font-weight: 800;
+  font-size: 22px;
+}
+.shipping {
+  color: #777;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  /* margin-bottom: 20px; */
+}
+.more-info-link:link,
+.more-info-link:visited {
+  color: #7a8283;
+  text-decoration: none;
+}
+
+.more-info-link:hover {
+  text-decoration: underline #7a8283;
+}
+
+.more-info-link:active {
+  color: blue;
+  text-decoration: underline blue;
+}
+.details-list {
+  list-style-type: square;
+  margin-left: 20px;
+}
+.details-title {
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+.btn {
+  font-size: 20px;
+  width: 100%;
+  background-color: black;
+
+  color: white;
+  cursor: pointer;
+
+  background-color: black;
+  border-top: 4px solid black;
+}
+.btn:hover {
+  color: black;
+  background-color: white;
+  border-top: 4px solid black;
+}
+.details-list li {
+  margin-bottom: 10px;
+}
+.black {
+  background-color: black;
+  display: inline-block;
+  padding: 15px 15px;
+}
+.black {
+  background-color: black;
+  display: inline-block;
+  padding: 15px 15px;
+}
+.black {
+  background-color: black;
+  display: inline-block;
+  padding: 15px 15px;
+}
+.blue {
+  background-color: blue;
+  display: inline-block;
+  padding: 15px 15px;
+}
+.red {
+  background-color: red;
+  display: inline-block;
+  padding: 15px 15px;
+}
+.yellow {
+  background-color: yellow;
+  display: inline-block;
+  padding: 15px 15px;
+}
+.green {
+  background-color: green;
+  display: inline-block;
+  padding: 15px 15px;
+}
+.brown {
+  background-color: brown;
+  display: inline-block;
+  padding: 15px 15px;
+}
+
+.colors {
+  padding-top: 20px;
+}
+.color {
+  margin-right: 10px;
+}
+article {
+  position: relative;
+}
+
+.sale-tag {
+  background-color: red;
+  display: inline-block;
+  padding: 10px 30px;
+  position: absolute;
+  top: -12px;
+  left: -25px;
+  color: white;
+  font-weight: bold;
+}
+
+/* float styles */
+/* .product-img {
+  float: left;
+  width: 300px;
+}
+.product-info {
+  float: left;
+  width: 300px;
+  padding: 15px;
+}
+.product-details {
+  float: left;
+  padding: 10px;
+  width: 300px;
+}
+.price {
+  float: left;
+}
+.shipping {
+  float: left;
+  margin-left: 100px;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+} */
+
+/* flex styles
+.flex-container {
+  display: flex;
+  gap: 20px;
+}
+.flex-container div {
+  flex: 1;
+}*/
+.flex-container2 {
+  margin-top: 20px;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+.product-title {
+  grid-column: 1/-1;
+}
+.btn {
+  grid-column: 1/-1;
+}
+.product-details {
+  margin-top: 12px;
+}

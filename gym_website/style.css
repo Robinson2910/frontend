@@ -1,0 +1,412 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 
+Semi-bold: 
+Bold: 
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+-0.5px
+0.75px
+
+--- 02 COLORS
+
+- Primary: #e67e22
+- Tints:
+#fdf2e9
+#fae5d3
+#eb984e
+
+- Shades: 
+#cf711f
+#45260a
+
+- Accents:
+- Greys
+
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+
+--- 05 SHADOWS
+
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+--- 06 BORDER-RADIUS
+
+Default: 9px
+Medium: 11px
+
+--- 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+
+  /* Does NOT work on Safari */
+  /* scroll-behavior: smooth; */
+}
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  overflow-x: hidden;
+}
+/* general styles */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.margin-bottom-md {
+  margin-bottom: 9.6rem !important;
+}
+.margin-top-md {
+  margin-top: 4.8 !important;
+}
+.margin-bottom-small {
+  margin-bottom: 3.2rem !important;
+}
+.grid-span-column {
+  grid-column: 1/-1;
+}
+.btn {
+  /* then only padding and margins can be used */
+  display: inline-block;
+  /* to remove the underline */
+  text-decoration: none;
+  /* text styles */
+  font-size: 2rem;
+  font-weight: 600;
+  color: inherit;
+  /* dimensions */
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  background-color: rgb(150, 13, 13);
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.section {
+  transition: transform 2s, opacity 1s;
+}
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.center-text {
+  text-align: center;
+}
+.grid {
+  display: grid;
+  gap: 3.2rem;
+}
+.grid--2-cols {
+  grid-template-columns: 45fr 55fr;
+  margin-bottom: 3.2rem;
+}
+.grid--3-cols {
+  grid-template-columns: 1fr 1fr 1fr;
+
+  margin-bottom: 3.2rem;
+}
+.grid--4-cols {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+/* header styles */
+.header {
+  height: 100vh;
+  max-width: 100%;
+  position: relative;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(./img/header_img.jpg);
+  background-size: cover;
+  margin-bottom: 9.6rem;
+}
+.heading-welcome {
+  font-size: 3.2rem;
+  margin-bottom: 3.2rem;
+}
+.heading-primary {
+  font-size: 5.2rem;
+  /* line-height: 1.6rem; */
+  line-height: 1;
+  margin-bottom: 3.2rem;
+}
+.gym-description {
+  font-size: 2.4rem;
+  max-width: 85%;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 1.6rem;
+}
+
+.header-container {
+  max-width: 120rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+}
+.header-container-inner {
+  max-width: 60%;
+}
+
+/* nav styles */
+.nav {
+  margin-bottom: 8.4rem;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+.logo {
+  height: 9.6rem;
+}
+
+/* services section */
+
+.img-service {
+  width: 100%;
+  height: 80%;
+}
+
+/* gym information box */
+.gym-image {
+  width: 100%;
+  height: 80%;
+}
+.gym-information-box {
+  justify-self: center;
+  align-self: baseline;
+}
+.heading-secondary {
+  font-size: 4.8rem;
+  color: #f1c644;
+  margin-bottom: 3.2rem;
+  text-transform: uppercase;
+}
+.gym-information-box {
+  padding-top: 3.2rem;
+}
+
+.heading-tertiary {
+  grid-column: 1/-1;
+  font-size: 3.2rem;
+  text-transform: uppercase;
+}
+.gym-info-text {
+  font-size: 2.4rem;
+}
+
+.highlight-green {
+  color: #25d366;
+}
+
+/* section achievers */
+.grid-achievers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  margin-bottom: 3.2rem;
+  margin-bottom: 16.4rem;
+}
+.heading-secondary span {
+  color: #fff;
+}
+
+/* section reviews */
+.review-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+.customer-img {
+  width: 19.6rem;
+  height: 19.6rem;
+  border-radius: 50%;
+}
+.customer-name {
+  font-size: 4.8rem;
+}
+.rating {
+  margin: 10px 0;
+  font-size: 5.2rem;
+  color: #f1c644; /* Star color */
+}
+
+.review-description {
+  font-size: 2rem;
+}
+
+/**************************/
+/* FOOTER */
+/**************************/
+
+.footer {
+  padding: 9.6rem 0;
+  border-top: 1px solid #eee;
+}
+
+.grid--footer {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+  gap: 12.8rem;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2.4rem;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.address {
+  margin-bottom: 2.4rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
+}
+
+/* section contact details */
+.section-contact-details {
+  margin-bottom: 9.6rem;
+}
+.contact-map-container {
+  padding: 9.6rem 0 9.2rem 9.2rem;
+}
+.contact-grid {
+  grid-template-columns: 45fr 55fr;
+  gap: 8rem;
+}
+.contact-heading {
+  color: #f1c644;
+  text-transform: uppercase;
+  font-size: 5.2rem;
+  font-weight: 500;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  margin-top: 8rem;
+}
+
+.contact-link:link,
+.contact-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 3.2rem;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.contact-link:hover,
+.contact-link:active {
+  color: #555;
+}
+.whatsapp-button {
+  background-color: #25d366;
+  /* padding: 0.8rem 0 0 0; */
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.6rem;
+  color: #fff;
+  gap: 1.6rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  /* padding:  0 0 0;
+   */
+  padding: 1.6rem;
+  width: 60%;
+  /* width: 50%; */
+}
+.whatsapp-icon {
+  width: 3.6rem;
+  height: 3.6rem;
+}
+.map-iframe {
+  width: 100%;
+  height: 100%;
+}

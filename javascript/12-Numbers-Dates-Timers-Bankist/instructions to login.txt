@@ -1,0 +1,15 @@
+Login credentials
+
+username:js
+password :1111
+
+username:jd
+
+password:2222
+
+transfer can be done only btwn these to accounts, because only two accounts objects have been created
+
+In future with help of backend multiple accounts can be creaeted,and transcation can be done btwn any
+
+bank accounts
+

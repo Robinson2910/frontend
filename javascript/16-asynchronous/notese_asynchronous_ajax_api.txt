@@ -1,0 +1,46 @@
+Here's a summary of the key points 
+
+**Understanding Asynchronous JavaScript:**
+
+- Asynchronous JavaScript is essential for tasks that should not block the main code execution.
+- Synchronous code executes line by line in the order defined in the code.
+- Synchronous code can cause issues when one line takes a long time to execute, as it blocks the entire process(example alert).
+- Asynchronous code allows tasks to run in the background, enabling the main code to continue without waiting for them to finish.
+
+**Asynchronous JavaScript:**
+
+- Asynchronous JavaScript involves using callback functions that execute after specific tasks complete.
+- Callback functions alone do not make code asynchronous; it's the asynchronous behavior of the task they're associated with that matters.
+- Examples of asynchronous behavior include timers (e.g., `setTimeout`) and loading images in the background.
+
+**Ajax Calls and Web APIs:**
+
+- Ajax (Asynchronous JavaScript and XML) allows communication with remote web servers asynchronously.
+- Ajax is used to request data from a server without reloading the page.
+- Online APIs, also known as web APIs, are applications running on web servers that provide data in response to requests.
+- 3rd-party APIs are APIs made available by other developers, often for free.
+- APIs are widely used to access various types of data, such as weather, currency conversion, flights, and more.
+- JSON (JavaScript Object Notation) is the most popular data format for APIs, as it is easy to send and parse in JavaScript.
+
+**Conclusion:**
+
+- Asynchronous JavaScript is crucial for non-blocking code execution and handling tasks that take time to complete.
+- Ajax calls to web APIs are common use cases for asynchronous JavaScript in web development.
+
+These notes should serve as a condensed reference for the key concepts discussed in the video transcript. You can further refine and organize these notes based on your specific needs and preferences.
+
+
+
+ The base URL of the API used throughout this section has changed
+
+It's not a big deal, it's really just one small change. Instead of:
+
+https://restcountries.eu/rest/v2/
+
+It's now:
+
+https://countries-api-836d.onrender.com/countries/
+
+So whenever we use the Countries API in this section, please just change the URL you see in the videos to this new one.
+
+Happy learning ✌️

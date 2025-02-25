@@ -1,0 +1,100 @@
+Certainly! Here are some key notes summarizing the lecture transcript you provided:
+
+### Implementing Inheritance with ES6 Classes
+
+1. **Introduction:**
+   - The goal is to implement inheritance using ES6 classes instead of constructor functions.
+   - ES6 classes provide a more abstract and cleaner syntax, hiding some details happening behind the scenes.
+
+2. **Creating the Parent Class:**
+   - Start with a basic class, e.g., `Person`, that has properties like `firstName`, `birthYear`, and methods like `calcAge`.
+   - The class syntax is a layer of abstraction over constructor functions.
+
+3. **Creating the Child Class:**
+   - Create a new class, e.g., `Student`, to inherit from the `Person` class.
+   - Use the `extends` keyword followed by the parent class name (`extends Person`).
+   - Define a constructor in the child class that receives additional parameters specific to the child class, e.g., `course`.
+   - Inside the child class constructor, call `super(...)` to invoke the parent class constructor and set up the `this` keyword.
+
+4. **Constructor Execution Order:**
+   - Always call `super()` first in the child class constructor.
+   - The `super` function is the parent class constructor.
+
+5. **Optional Constructor:**
+   - If the child class doesn't need additional properties, a constructor is not mandatory.
+   - The child class inherits all properties and methods from the parent class automatically.
+
+6. **Instance Creation:**
+   - Create an instance of the child class, e.g., `const martha = new Student('Martha Jones', 2012, 'Computer Science')`.
+
+7. **Method Inheritance:**
+   - Child class instances inherit methods from the parent class.
+   - Methods like `introduce` and `calcAge` work seamlessly on instances of the child class.
+
+8. **Override a Method:**
+   - Demonstrate method overriding in the child class.
+   - For example, override the `calcAge` method to show a student's perceived age in a university context.
+
+9. **Prototype Chain:**
+   - Inspect the prototype chain to see that it's automatically set up by the `extends` keyword.
+   - Child class methods appear first, shadowing those of the parent class.
+
+10. **Caution on Inheritance:**
+   - Acknowledge that inheritance, while powerful, can be problematic in real-world software design.
+   - Issues with tight coupling and potential pitfalls are highlighted.
+
+11. **Closing Remarks:**
+    - Emphasize the importance of understanding the theory behind inheritance between classes, as covered in previous lectures.
+    - Mention that the explored inheritance mechanism will be discussed further in the context of functional programming.
+
+### Conclusion:
+Understanding how to implement inheritance using ES6 classes is crucial for effective object-oriented programming in JavaScript. While the syntax is cleaner, developers should be cautious about potential issues related to inheritance in real-world software design. The exploration of this mechanism sets the stage for discussions on alternatives like functional programming.
+
+code:
+// Parent Class: Person
+class Person {
+  // Constructor with properties
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  // Method to calculate age
+  calcAge() {
+    const currentYear = new Date().getFullYear();
+    this.age = currentYear - this.birthYear;
+    console.log(`${this.firstName} is ${this.age} years old.`);
+  }
+}
+
+// Child Class: Student
+class Student extends Person {
+  // Constructor with additional properties
+  constructor(firstName, birthYear, course) {
+    // Call the parent class constructor using super
+    super(firstName, birthYear);
+    
+    // Additional property for the child class
+    this.course = course;
+  }
+
+  // Override the calcAge method
+  calcAge() {
+    // Customized age calculation for a student
+    const currentYear = new Date().getFullYear();
+    const perceivedAge = currentYear - this.birthYear + 10;
+    console.log(`${this.firstName} feels more like ${perceivedAge} years old as a student.`);
+  }
+
+  // Method specific to the Student class
+  study() {
+    console.log(`${this.firstName} is studying ${this.course}.`);
+  }
+}
+
+// Create instances of the classes
+const martha = new Student('Martha Jones', 2012, 'Computer Science');
+
+// Call methods on instances
+martha.calcAge(); // Output: Martha feels more like 20 years old as a student.
+martha.study();   // Output: Martha is studying Computer Science.

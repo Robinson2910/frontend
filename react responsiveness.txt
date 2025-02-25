@@ -1,0 +1,12 @@
+/* Larger root font size for a specific component */
+.specific-component {
+  font-size: 2rem;
+}
+
+for child components
+
+use 1em which implies 2rem and for 2em it is equal to 4rem
+
+
+so only if we change the font size of particular component using media query ,
+we can make it responsive 

@@ -1,0 +1,47 @@
+Title: Understanding Web Requests and Responses
+
+
+
+**1. Request-Response Model or Client-Server Architecture**
+   - Whenever you access a Web server, the client (browser) sends a request to the server.
+   - The server responds by sending back the requested data or Web page.
+   - This process remains consistent, whether accessing a whole Web page or data from a Web API.
+
+**2. Domain Name and DNS**
+   - Every URL begins with HTTP or HTTPS for the protocol.
+   - The domain name (e.g., restcountries.eu) is a human-friendly alias for the server's actual IP address.
+   - Domain Name Servers (DNS) act as internet phone books, converting domain names to IP addresses.
+
+**3. TCP and IP**
+   - Transmission Control Protocol (TCP) and Internet Protocol (IP) are fundamental communication protocols that govern data transfer on the internet.
+   - They manage how data travels across the Web, breaking it into packets for efficient transmission and reassembling them at their destination.
+
+**4. HTTP Request**
+   - HTTP (Hypertext Transfer Protocol) is another communication protocol used for client-server communication.
+   - An HTTP request contains:
+     - Start line with the HTTP method (e.g., GET, POST) used, request target, and HTTP version.
+     - Request headers with information about the request itself.
+     - Request body (if sending data).
+
+**5. HTTP Response**
+   - An HTTP response is similar in structure to a request, including start line, headers, and body.
+   - The start line contains a status code indicating the success or failure of the request (e.g., 200 for success, 404 for page not found).
+
+**6. HTTPS**
+   - HTTPS is a secure version of HTTP encrypted using TLS or SSL.
+   - The logic behind HTTP requests and responses applies to HTTPS as well.
+
+**7. Multiple Requests for Web Pages**
+   - When accessing a web page, the initial request fetches the HTML file.
+   - The browser then scans the HTML for required assets (JavaScript, CSS, images, etc.).
+   - A new HTTP request is made for each asset, leading to multiple requests and responses.
+   - These requests may occur simultaneously but are limited to prevent connection slowdown.
+
+**8. TCP/IP and Data Transmission**
+   - TCP breaks data into packets for efficient transmission, reassembling them at the destination.
+   - IP handles the routing of packets using IP addresses.
+
+**Conclusion**
+   - This overview provides insight into how the Web operates behind the scenes.
+   - Understanding these processes can be valuable for developers, even though they don't manually write HTTP requests.
+   - The video will return to JavaScript and AJAX calls in the following segments.

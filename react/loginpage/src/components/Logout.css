@@ -1,0 +1,21 @@
+.logout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  font-family: "inter";
+}
+.logout__button {
+  width: fit-content;
+  padding: 17px 30px;
+  margin-top: 20px;
+  background-color: black;
+  border: none;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-radius: 3px;
+}
+
+.user__name {
+  color: blueviolet;
+}

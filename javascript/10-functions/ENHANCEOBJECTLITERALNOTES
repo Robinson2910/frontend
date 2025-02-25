@@ -1,0 +1,73 @@
+Enhanced object literals in ES6 (ECMAScript 2015) introduced several new features that make defining and using objects more concise and expressive. Here are the key features:
+
+### 1. **Property Shorthand**
+
+- **Description:** If the property name is the same as the variable name, you can omit the colon and the value.
+- **Example:**
+
+  ```javascript
+  const name = 'Jessica';
+  const age = 27;
+
+  const person = { name, age };
+  // Equivalent to: { name: name, age: age }
+  ```
+
+### 2. **Method Shorthand**
+
+- **Description:** You can define methods on an object without using the `function` keyword.
+- **Example:**
+  ```javascript
+  const person = {
+    name: 'Jessica',
+    greet() {
+      console.log(`Hello, my name is ${this.name}`);
+    },
+  };
+  person.greet(); // Output: Hello, my name is Jessica
+  ```
+
+### 3. **Computed Property Names**
+
+- **Description:** You can dynamically compute property names using an expression inside square brackets `[]`.
+- **Example:**
+  ```javascript
+  const prop = 'lastName';
+  const person = {
+    firstName: 'Jessica',
+    [prop]: 'Williams', // Computed property name
+  };
+  console.log(person.lastName); // Output: Williams
+  ```
+
+### 4. **Concise Property Definitions in Object Literals**
+
+- **Description:** Allows embedding variables directly as properties without needing to repeat the name.
+- **Example:**
+  ```javascript
+  const firstName = 'Jessica';
+  const person = { firstName };
+  // Equivalent to: { firstName: firstName }
+  ```
+
+### 5. **Prototype Assignment (Using `__proto__`)**
+
+- **Description:** You can set the prototype of an object using `__proto__` within an object literal.
+- **Example:**
+
+  ```javascript
+  const animal = {
+    eats: true,
+  };
+
+  const rabbit = {
+    jumps: true,
+    __proto__: animal, // Prototype assignment
+  };
+
+  console.log(rabbit.eats); // Output: true
+  ```
+
+### Summary
+
+Enhanced object literals in ES6 streamline the syntax for creating objects, making the code more readable and less repetitive. These features are widely used in modern JavaScript development to improve code efficiency and maintainability.

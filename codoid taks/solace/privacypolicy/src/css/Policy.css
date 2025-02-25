@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: rgb(33, 37, 41);
+  overflow-x: hidden;
+  width: 100%;
+  background-color: #fff;
+}
+/* helper classes */
+.container {
+  max-width: 90%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-center {
+  text-align: center;
+}
+.margin-bottom-vsmall {
+  margin-bottom: 1.6rem;
+}
+.margin-bottom-small {
+  margin-bottom: 3.2rem;
+}
+.margin-bottom-medium {
+  margin-bottom: 4.8rem;
+}
+.margin-top-medium {
+  margin-top: 4.8rem;
+}
+/* highlights the word */
+.highlight {
+  font-weight: 700;
+}
+/* headings */
+.heading-primary {
+  font-size: 2.4rem;
+}
+.heading-secondary {
+  font-size: 2rem;
+}
+/* para */
+.para {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* lists */
+.inner-list {
+  margin-left: 3%;
+  max-width: 97%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+/* list in the tabular column */
+.table-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 97%;
+  margin-left: 3%;
+}
+/* tabular column grid */
+.table-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-collapse: collapse;
+}
+.table-content.table-cell {
+  padding: 1.6rem;
+  border: 0.5px solid black;
+  min-height: 40rem;
+}
+.table-header {
+  background-color: #c4c4c4;
+  color: #fff;
+  height: 5.3rem;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid black;
+}
+
+.section-table {
+  /* padding: 3rem; */
+}
+/* media queries */
+@media (max-width: 680px) {
+  .table-box {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-full-width {
+    grid-column: 1 / -1;
+  }
+  .table-content.table-cell {
+    min-height: 31rem;
+  }
+}
+.breakable-link {
+  word-break: break-all;
+}
+
+@media (max-width: 406px) {
+  .table-box {
+    grid-template-columns: 1fr;
+  }
+
+  .table-content.table-cell {
+    min-height: 25rem;
+  }
+}

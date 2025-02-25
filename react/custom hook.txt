@@ -1,0 +1,51 @@
+No, it's not compulsory to return values of state created within a custom hook. Whether you return state values from your custom hook or not depends on the specific use case and purpose of the hook.
+
+Custom hooks are flexible and can serve various purposes. Here are a few scenarios:
+
+1. **Returning State Values:**
+   - If the primary goal of your custom hook is to manage and encapsulate a specific piece of stateful logic (e.g., managing a counter), you would typically return the state values and any functions for updating that state. This allows components using the hook to access and interact with that state.
+
+   Example:
+
+   ```jsx
+   import { useState } from 'react';
+
+   function useCounter(initialValue) {
+     const [count, setCount] = useState(initialValue);
+
+     const increment = () => {
+       setCount(count + 1);
+     };
+
+     return {
+       count,
+       increment,
+     };
+   }
+   ```
+
+2. **Side Effects Only:**
+   - In some cases, a custom hook might focus on managing side effects and doesn't need to return state values. Instead, it might return only functions or event handlers to help components initiate those side effects. For example, a hook for handling form submission or making network requests could follow this pattern.
+
+   Example:
+
+   ```jsx
+   import { useEffect } from 'react';
+
+   function useAnalyticsTracking() {
+     useEffect(() => {
+       // Implement analytics tracking logic here
+     }, []);
+
+     return {
+       trackEvent: (eventName) => {
+         // Function for components to trigger an event
+       },
+     };
+   }
+   ```
+
+3. **Combination of Both:**
+   - Custom hooks can also return a combination of state values and functions for side effects, depending on the specific requirements of your component. The choice is flexible and depends on your use case.
+
+It's important to design your custom hooks to serve the needs of the components that will use them. The goal is to make your components more reusable and maintainable, and the structure of your custom hook should align with that goal. Whether you return state values or not depends on the specific behavior and responsibilities of the custom hook.
