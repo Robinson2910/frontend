@@ -1,0 +1,24 @@
+npm create vite@4 
+
+next type in the project name
+
+choose react with vanilla js
+
+
+install node modules(npm i)
+
+configure eslint:
+
+npm install --save-dev vite-plugin-eslint eslint-config-react-app eslint
+
+then  create .eslintrc.json
+
+code:
+
+{
+"extends":"react-app"
+}
+
+then import eslint from 'vite-plugin-eslint'  in vite.config.js
+
+then call eslint() inside plugins array
