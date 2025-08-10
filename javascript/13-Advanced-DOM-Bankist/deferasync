@@ -1,0 +1,40 @@
+
+Notes on JavaScript Loading Methods
+Introduction:
+
+As projects grow, adding new features can slow down page load times.
+Optimizing JavaScript loading on the front-end is a quick and effective way to improve page speed.
+This guide explains three methods to load JavaScript: the standard script tag, async, and defer.
+HTML Parsing:
+
+When a browser downloads an HTML file, it parses from the top to the bottom of the file.
+Resources like images are downloaded in the background as the HTML continues to parse.
+However, with JavaScript, a normal script tag halts the HTML parser until the script is downloaded and executed, causing delays.
+Placing script tags at the bottom of the HTML helps the parser handle other content like images first before halting for the script.
+Normal Script Tag Loading:
+
+A standard script tag stops the HTML parsing until the JavaScript is downloaded and executed.
+This can slow down the page load time, especially if the JavaScript file is large.
+Async Attribute:
+
+The async attribute tells the browser to download the JavaScript file in the background while HTML parsing continues.
+Once the JavaScript is downloaded, the parser pauses, executes the script, and then resumes HTML parsing.
+However, async scripts can run in a random order depending on download times, which may lead to unpredictable behavior.
+Defer Attribute:
+
+The defer attribute ensures the JavaScript is downloaded during HTML parsing but not executed until the HTML is fully parsed.
+Defer scripts are executed in the order they are listed in the HTML, which is beneficial for scripts that depend on one another.
+Defer is useful when the JavaScript needs to run after the full page has been loaded but still needs to execute in a specific order.
+Live Example of Loading Methods:
+
+In a live demo, normal script loading shows a pause in HTML parsing when JavaScript is being downloaded.
+Using async, the HTML is parsed before the asynchronous script is executed, but execution timing can vary depending on network conditions.
+With defer, the script executes after the HTML is fully parsed and before the document.ready event, ensuring predictable order and performance.
+Recommendation:
+
+For most cases, use defer as it ensures scripts run after parsing without blocking, and in the intended order.
+Async is better for small, independent scripts where execution order does not matter.
+Conclusion:
+
+Loading JavaScript with async or defer can significantly speed up page loads compared to using standard script tags.
+Placing script tags at the bottom of the page or using defer in the head tag ensures smoother HTML parsing and better page performance.

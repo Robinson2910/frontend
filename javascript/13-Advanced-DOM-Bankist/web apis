@@ -1,0 +1,41 @@
+Web APIs are accessible through the global `window` object in a web browser. The `window` object serves as the global context for the browser environment, and it provides access to various Web APIs that allow you to interact with the browser and perform various tasks.
+
+### Key Web APIs Accessible Through `window`
+
+1. **DOM Manipulation APIs:**
+   - **`document`**: Provides methods to manipulate the DOM, like `document.querySelector()`, `document.createElement()`, etc.
+   - **Example:** `window.document.querySelector('div')`
+
+2. **Browser APIs:**
+   - **`fetch`**: For making network requests.
+   - **`console`**: For logging messages and debugging.
+   - **`localStorage` and `sessionStorage`**: For storing data in the browser.
+   - **`navigator`**: Provides information about the browser and user agent.
+   - **Example:** `window.fetch('https://api.example.com/data')`
+
+3. **Event Handling APIs:**
+   - **`addEventListener`**: To listen for events on the `window` object or any other DOM element.
+   - **Example:** `window.addEventListener('resize', () => console.log('Window resized'))`
+
+4. **Geolocation API:**
+   - **`navigator.geolocation`**: To access the user's geographical location.
+   - **Example:** `window.navigator.geolocation.getCurrentPosition(position => console.log(position))`
+
+5. **Storage API:**
+   - **`localStorage` and `sessionStorage`**: For storing key-value pairs in a web browser.
+   - **Example:** `window.localStorage.setItem('key', 'value')`
+
+6. **History API:**
+   - **`window.history`**: To interact with the browser’s history, like navigating back and forth.
+   - **Example:** `window.history.back()`
+
+7. **Screen API:**
+   - **`window.screen`**: Provides information about the user's screen, such as its size.
+   - **Example:** `window.screen.width`
+
+### Summary
+
+- **Global Access:** The `window` object is the global object in a browser environment, and it provides access to various Web APIs.
+- **Direct Access:** You can access and use Web APIs directly through `window`, though in modern JavaScript, it's common to see these APIs accessed directly without explicitly referencing `window` (e.g., `fetch()` instead of `window.fetch()`).
+
+The `window` object essentially acts as the gateway to the browser's Web APIs, allowing you to perform a wide range of operations and interactions within your web applications.

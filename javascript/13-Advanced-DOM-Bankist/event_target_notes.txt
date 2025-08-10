@@ -1,0 +1,15 @@
+In object-oriented programming and software design, an "interface" refers to a contract or a set of rules that a class or object must adhere to. It defines a standardized way for different objects to interact or communicate with each other. Here's what it means to be an "interface" in the context of the `EventTarget` interface and object-oriented programming:
+
+1. **Contractual Agreement:** An interface specifies a set of methods (and sometimes properties) that any class or object implementing that interface must provide. It's like a contract that says, "If you implement this interface, you must provide these methods with specific names and parameters."
+
+2. **No Implementation:** Interfaces themselves don't contain any implementation code. They only define the method signatures (names, parameters, and return types), but they don't specify how those methods should work. It's up to the classes or objects that implement the interface to provide the actual code for those methods.
+
+3. **Polymorphism:** Interfaces enable polymorphism, which means that objects of different classes can be treated as objects of the same interface. This allows for more flexible and extensible code because you can write code that works with any object that adheres to the interface, regardless of the specific class it belongs to.
+
+In the context of the `EventTarget` interface:
+
+- It defines a contract that objects (such as DOM elements, the `window` object, or custom objects) must adhere to if they want to handle events.
+- The `EventTarget` interface specifies methods like `addEventListener`, `removeEventListener`, and `dispatchEvent` that any object implementing this interface must provide.
+- Objects that implement the `EventTarget` interface can be used interchangeably when working with event handling because they all adhere to the same set of event-related methods, even though the underlying implementation may be different.
+
+So, in simpler terms, an "interface" in this context defines a common set of methods that objects must implement if they want to participate in a specific type of behavior or functionality—in this case, event handling.
