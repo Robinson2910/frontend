@@ -15,13 +15,22 @@ const initialState = {
   questions: [],
 
   // 'loading','error','ready','active','finished'
+  //LOADING IMPLIES QUESTIONS ARE YET TO BE FETCHED
+  //ERROR IMPLIES ERROR HAPPENED DURING FETCHING
+  //READY IMPLIES QUESTIONS ARE FETCHED
+  //ACITVE IS STATUS WHEN QUIZ IS ACTIVE
+  //FINISH IS IN WHEN QUIZ IS FINISHED
   status: "loading",
-  index: 0,
-  answer: null,
+  index: 0, //lets to know which question we are in now
+  answer: null, //answer
   points: 0,
   highScore: 0,
   secondsRemaining: null,
 };
+
+//when we click the start button
+//we set status as active
+//and update secondsRemaining
 function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
@@ -89,10 +98,13 @@ function reducer(state, action) {
   }
 }
 export default function App() {
+  // For components with a large number of state variables
+  // Better suited for handling complex state logic
   const [state, dispatch] = useReducer(
     reducer,
     initialState
   );
+
   const {
     status,
     questions,
