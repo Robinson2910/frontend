@@ -1,142 +1,164 @@
+// Import necessary dependencies
 import { useState } from "react";
 import PropTypes from "prop-types";
+
+// Container style for the main component layout
 const containerStyle = {
   display: "flex",
-  alignItems: "center",
-  gap: "16px",
+  alignItems: "center", // Align stars and text vertically centered
+  gap: "16px", // Space between stars and text
 };
+
+// Container style for arranging the stars
 const starContainerStyle = {
-  display: "flex",
+  display: "flex", // Horizontal arrangement of stars
 };
+
+// Style for the text below/next to the stars
 const textStyle = {
-  lineHeight: "1",
-  margin: "0",
+  lineHeight: "1", // Consistent line height
+  margin: "0", // Remove default margins
 };
 
-//setting default values for the props
-
-/*Summary of the Star rating compononet
-There is a div and inside that there is div for rendering stars and there is para ,so these two elements are arranged using flex 
-
-and inside the div where stars are rendered
-
-we just use the normal rendering list strategy of passing array of jsx code into the javascript mode and react renders it
-
-//this time the array is created using Array.from and inside each index of array star component is stored
-
-//for each star component onRate handler fn is passed as prop
-//that handler fn can call the handleRating fn which results in child-parent communication
-//that handler fn has access to the parameter i of the Array.from  map method due to closure
-
-//so each time the handler fn is called rating is set according to that index
-
-//Hope u understood dumbo
-*/
+// PropTypes to validate the props passed to the StarRating component
 StarRating.propTypes = {
-  maxRating: PropTypes.number,
-  defaultRating: PropTypes.number,
-  color: PropTypes.string,
-  size: PropTypes.number,
-  messages: PropTypes.array,
-  className: PropTypes.string,
-  onSetRating: PropTypes.func,
+  maxRating: PropTypes.number, // Maximum number of stars
+  defaultRating: PropTypes.number, // Initial rating
+  color: PropTypes.string, // Color of selected stars
+  size: PropTypes.number, // Size of the stars
+  messages: PropTypes.array, // Optional messages to display per rating
+  className: PropTypes.string, // Additional CSS class for styling
+  onSetRating: PropTypes.func, // Callback to notify parent of rating changes
 };
+
+// Main StarRating component
 export default function StarRating({
-  maxRating = 5,
-  color = "#fcc419",
-  size = 48,
-  className = "",
-  messages = [],
-  defaultRating = 0,
-  onSetRating,
+  maxRating = 5, // Default to 5 stars
+  color = "#fcc419", // Default color for selected stars
+  size = 48, // Default size for each star
+  className = "", // Default empty string for additional classes
+  messages = [], // Optional array of messages for each rating
+  defaultRating = 0, // Default rating is 0
+  onSetRating, // Callback for setting rating
 }) {
-  const [rating, setRating] = useState(defaultRating);
+  // State to hold the selected rating
+  const [rating, setRating] = useState(
+    defaultRating
+  );
+
+  // State to hold the temporary rating (hover effect)
   const [tempRating, setTempRating] = useState(0);
+
+  // Function to handle permanent rating change
   function handleRating(rating) {
-    setRating(rating);
-    onSetRating(rating);
+    setRating(rating); // Update the state with selected rating
+    onSetRating(rating); // Notify the parent component
   }
+
+  // Function to handle temporary rating during hover
   function handleTempRating(rating) {
-    setTempRating(rating);
+    setTempRating(rating); // Update the state with temporary rating
   }
+
+  // Style for the rating text based on size and color
   const textStyle = {
     lineHeight: "1",
     margin: "0",
-    color,
-    fontSize: `${size / 1.5}px`,
+    color, // Dynamic color from props
+    fontSize: `${size / 1.5}px`, // Adjust font size relative to star size
   };
-  return (
-    <div style={containerStyle} className={className}>
-      <div style={starContainerStyle}>
-        {Array.from({ length: maxRating }, (_, i) => (
-          // returning jsx
-          // In JavaScript, a closure is a function that has access to the variables and parameters of its outer (enclosing) function, even after the outer function has finished executing
-          //so here the handler fn has access to the parameter i and the value which was orginally passed at
-          //here the handler fn which is passed as a prop has acces to the variable i via closure
-          // onRate={() => {
-          //   console.log(i);
 
-          //   handleRating(i + 1);
-          // }}
-          <Star
-            key={i + 1}
-            id={i + 1}
-            rating={rating}
-            onRating={handleRating}
-            tempRating={tempRating}
-            onTempRating={handleTempRating}
-            color={color}
-            size={size}
-          />
-        ))}
+  return (
+    // Main container for the star rating component
+    <div
+      style={containerStyle}
+      className={className}
+    >
+      {/* Container for stars */}
+      <div style={starContainerStyle}>
+        {Array.from(
+          { length: maxRating },
+          (_, i) => (
+            // Generate a Star component for each star
+            <Star
+              key={i + 1} // Unique key for React
+              id={i + 1} // Star ID (1-based index)
+              rating={rating} // Current selected rating
+              onRating={handleRating} // Handler for permanent rating
+              tempRating={tempRating} // Current temporary rating
+              onTempRating={handleTempRating} // Handler for temporary rating
+              color={color} // Star color
+              size={size} // Star size
+            />
+          )
+        )}
       </div>
 
+      {/* Display a message or the current rating */}
       <p style={textStyle}>
         {messages.length === maxRating
-          ? messages[tempRating ? tempRating - 1 : rating - 1]
-          : tempRating || rating || ""}
+          ? messages[
+              tempRating
+                ? tempRating - 1
+                : rating - 1
+            ] // Show message based on rating
+          : tempRating || rating || ""}{" "}
+        {/* Fallback to rating or tempRating */}
       </p>
     </div>
   );
 }
 
-function Star({ id, rating, onRating, onTempRating, tempRating, color, size }) {
+// Star component to represent individual stars
+function Star({
+  id,
+  rating,
+  onRating,
+  onTempRating,
+  tempRating,
+  color,
+  size,
+}) {
+  // Style for each star
   const starStyle = {
-    width: `${size}px`,
-    height: `${size}px`,
-    display: "block",
-    cursor: "pointer",
+    width: `${size}px`, // Width based on size prop
+    height: `${size}px`, // Height based on size prop
+    display: "block", // Block-level element
+    cursor: "pointer", // Pointer cursor for interactivity
   };
+
   return (
+    // Container for the star SVG
     <span
       style={starStyle}
-      onClick={() => onRating(id)}
-      onMouseEnter={() => onTempRating(id)}
+      onClick={() => onRating(id)} // Handle click to set rating
+      onMouseEnter={() => onTempRating(id)} // Set tempRating on hover
       onMouseLeave={() => {
-        onTempRating(0);
-        onRating(rating);
+        onTempRating(0); // Clear tempRating when hover ends
+        onRating(rating); // Reset to current rating
       }}
     >
+      {/* SVG for the star */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill={
           tempRating
-            ? tempRating >= id
+            ? tempRating >= id // Highlight based on tempRating
               ? color
               : "#000"
-            : rating >= id
+            : rating >= id // Highlight based on permanent rating
             ? color
             : "#000"
         }
-        stroke={color}
+        stroke={color} // Outline color
       >
+        {/* Path defining the star shape */}
         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
       </svg>
     </span>
   );
 }
-
 /* <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 20 20"

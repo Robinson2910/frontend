@@ -110,6 +110,8 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] =
     useState(null);
+
+  //use movies is a custom hook
   const { movies, isLoading, error } =
     useMovies(query);
   const [watched, setWatched] =
