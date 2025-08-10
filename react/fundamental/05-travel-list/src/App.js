@@ -27,6 +27,8 @@ we can update the parent container value from child container this is called as 
   function handleAddItems(item) {
     setItems((items) => [...items, item]); //we cannot use item.push(item) as it mutates the state
   }
+
+  //filter condition is satisified the element is retained
   function handleRemoveItems(id) {
     setItems((items) =>
       items.filter((item) => item.id !== id)
