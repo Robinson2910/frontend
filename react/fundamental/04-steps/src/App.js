@@ -25,6 +25,7 @@ function Steps() {
   // const [test, setTest] = useState({ firstName: "jonas" });
   // console.log(test.name);
 
+  //handler functions
   function handlePrevious() {
     // alert("Previous");
     if (step > 1) setStep(step - 1);
